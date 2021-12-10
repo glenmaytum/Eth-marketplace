@@ -9,7 +9,7 @@ const lectures = [
 
 export default function Curriculum({ locked }) {
 	const statusClass =
-		"px-2 inline-flex text-xs leading-5 font-semibold rounded-full ";
+		"px-2 inline-flex text-xs leading-5 font-semibold rounded-full";
 	return (
 		<section className="max-w-5xl mx-auto">
 			<div className="flex flex-col">
