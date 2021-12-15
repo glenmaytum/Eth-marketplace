@@ -1,13 +1,15 @@
 import { BaseLayout } from "@components/ui/layout";
 import { MarketHeader } from "@components/ui/marketplace";
-import { OrderCard } from "@components/ui/order";
+import { OwnedCourseCard } from "@components/ui/course";
 
 export default function ManagedCourses() {
 	return (
 		<>
-			<MarketHeader />
+			<div className="py-4">
+				<MarketHeader />
+			</div>
 			<section className="grid grid-cols-1">
-				<OrderCard />
+				<OwnedCourseCard />
 			</section>
 		</>
 	);
