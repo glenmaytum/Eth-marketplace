@@ -5,3 +5,5 @@ export { default as Hero } from "../common/hero";
 export { default as Modal } from "../common/modal";
 export { default as Navbar } from "../common/navbar";
 export { default as ActiveLink } from "../common/link";
+export { default as Message } from "./message";
+export { default as Loader } from "./loader";
