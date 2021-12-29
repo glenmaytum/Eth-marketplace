@@ -1,6 +1,6 @@
 import { useHooks } from "@components/providers/web3";
 
-const enhancedHook = (swrRes) => {
+const enhanceHook = (swrRes) => {
 	return {
 		...swrRes,
 		hasInitialResponse: swrRes.data || swrRes.error,
@@ -8,16 +8,26 @@ const enhancedHook = (swrRes) => {
 };
 
 export const useNetwork = () => {
-	const swrRes = enhancedHook(useHooks((hooks) => hooks.useNetwork)());
+	const swrRes = enhanceHook(useHooks((hooks) => hooks.useNetwork)());
 	return {
 		network: swrRes,
 	};
 };
 
 export const useAccount = () => {
-	const swrRes = enhancedHook(useHooks((hooks) => hooks.useAccount)());
+	const swrRes = enhanceHook(useHooks((hooks) => hooks.useAccount)());
 	return {
 		account: swrRes,
+	};
+};
+
+export const useOwnedCourses = (...args) => {
+	const swrRes = enhanceHook(
+		useHooks((hooks) => hooks.useOwnedCourses)(...args)
+	);
+
+	return {
+		ownedCourses: swrRes,
 	};
 };
 
