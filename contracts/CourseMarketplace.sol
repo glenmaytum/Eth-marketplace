@@ -29,20 +29,20 @@ contract CourseMarketplace {
   address payable private owner;
 
   constructor() {
-      setContractOwner(msg.sender);
+    setContractOwner(msg.sender);
   }
 
   /// Course has already a Owner!
   error CourseHasOwner();
 
-    /// Only owner has access!
+  /// Only owner has an access!
   error OnlyOwner();
 
   modifier onlyOwner() {
-      if (msg.sender != getContractOwner()) {
-          revert OnlyOwner();
-      }
-      _;
+    if (msg.sender != getContractOwner()) {
+      revert OnlyOwner();
+    }
+    _;
   }
 
   function purchaseCourse(
@@ -69,13 +69,13 @@ contract CourseMarketplace {
       state: State.Purchased
     });
   }
-  
-    function transferOwnership(address newOwner)
+
+  function transferOwnership(address newOwner)
     external
     onlyOwner
-    {
-        setContractOwner(newOwner);
-    }
+  {
+    setContractOwner(newOwner);
+  }
 
   function getCourseCount()
     external
@@ -101,17 +101,16 @@ contract CourseMarketplace {
     return ownedCourses[courseHash];
   }
 
-  function getContractOwner() 
+  function getContractOwner()
     public
     view
-    returns(address) 
-    {   
-        return owner;
-    }
+    returns (address)
+  {
+    return owner;
+  }
 
   function setContractOwner(address newOwner) private {
-  owner = payable(newOwner);
-
+    owner = payable(newOwner);
   }
 
   function hasCourseOwnership(bytes32 courseHash)

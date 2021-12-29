@@ -1,6 +1,11 @@
+
+
+
 module.exports = {
-	reactStrictMode: true,
-	images: {
-		domains: ["thrangra.sirv.com"],
-	},
-};
+  reactStrictMode: true,
+  images: {
+    domains: [
+      "thrangra.sirv.com"
+    ]
+  }
+}

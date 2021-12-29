@@ -1,18 +1,21 @@
-import Link from "next/link";
-import React from "react";
-import { useRouter } from "next/router";
 
-export default function ActiveLink({ children, activeLinkClass, ...props }) {
-	const { pathname } = useRouter();
-	let className = children.props.className || "";
+import Link from "next/link"
+import React from "react"
+import { useRouter } from "next/router"
 
-	if (pathname === props.href) {
-		className = `${className} ${
-			activeLinkClass ? activeLinkClass : "text-indigo-600"
-		}`;
-	}
+export default function ActiveLink({children, activeLinkClass, ...props}) {
+  const { pathname } = useRouter()
+  let className = children.props.className || ""
 
-	return (
-		<Link {...props}>{React.cloneElement(children, { className })}</Link>
-	);
+  if (pathname === props.href) {
+    className = `${className} ${activeLinkClass ? activeLinkClass : "text-indigo-600"}`
+  }
+
+  return (
+    <Link {...props}>
+      {
+        React.cloneElement(children, {className})
+      }
+    </Link>
+  )
 }
