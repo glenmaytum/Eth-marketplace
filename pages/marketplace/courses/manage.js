@@ -1,20 +1,15 @@
-
-
 import { Button } from "@components/ui/common";
 import { CourseFilter, OwnedCourseCard } from "@components/ui/course";
 import { BaseLayout } from "@components/ui/layout";
 import { MarketHeader } from "@components/ui/marketplace";
 
 export default function ManageCourses() {
-
-  return (
-    <>
-      <div className="py-4">
-        <MarketHeader />
-        <CourseFilter />
-      </div>
-      <section className="grid grid-cols-1">
-        <OwnedCourseCard>
+	return (
+		<>
+			<MarketHeader />
+			<CourseFilter />
+			<section className="grid grid-cols-1">
+				{/* <OwnedCourseCard>
           <div className="flex mr-2 relative rounded-md">
             <input
               type="text"
@@ -26,10 +21,10 @@ export default function ManageCourses() {
               Verify
             </Button>
           </div>
-        </OwnedCourseCard>
-      </section>
-    </>
-  )
+        </OwnedCourseCard> */}
+			</section>
+		</>
+	);
 }
 
-ManageCourses.Layout = BaseLayout
+ManageCourses.Layout = BaseLayout;
